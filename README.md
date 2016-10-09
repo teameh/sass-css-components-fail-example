@@ -18,7 +18,7 @@ npm start // runs fine
 
 It seems as if the sass loader does not handle css-modules well.
 
-## Master
+## Master example
 
 Uses CSS Modules + SASS
 
@@ -70,9 +70,9 @@ Open [http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-d
 
 ![Result](http://i.imgur.com/PQwBbkD.png)
 
-Fails.. see [webpack.master.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.master.log) for full file.
+Runs fine. See [webpack.master.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.master.log) for full log.
 
-## PostCSS
+## PostCSS example
 
 Uses CSS Modules + SASS + PostCSS
 
@@ -117,13 +117,13 @@ Module build failed: Unknown word (11:14)
 ...
 
  ```
-Fails.. see [webpack.postcss.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.postcss.log) for full file.
+Fails.. see [webpack.postcss.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.postcss.log) for full log.
 
- ## Log source example
+## Log source example
 
- Uses CSS modules + SASS + Custom source logging module
+Uses CSS modules + SASS + [Custom source logging module](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/loaders/log-source-loader.js)
 
- custom loader is loaded in between css-loader and sass-loader to see what the output of the sass loader is.
+custom loader is loaded in between css-loader and sass-loader to see what the output of the sass loader is.
 
 ```sh
 $ git co log-source
@@ -131,15 +131,15 @@ $ git co log-source
 $ npm start
 ```
 
-Fails.. see [webpack.log-source.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.log-source.log) for full file.
+Fails.. see [webpack.log-source.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.log-source.log) for full log.
 
 File is showing full sass, not css...
 
 ## No Css Modules example
 
- Uses SASS + Custom source logging module
+Uses SASS + Custom source logging module (Same as prev. but without css modules).
 
- Same as above but without css modules. This runs fine. See [webpack.no-css-modules.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.no-css-modules.log) for full file.
+This runs fine. See [webpack.no-css-modules.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.no-css-modules.log) for full log.
 
 File is showing full sass, not css...
 

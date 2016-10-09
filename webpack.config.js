@@ -46,6 +46,12 @@ module.exports = {
   postcss: [
     autoprefixer({ browsers: ['> 0.5%'] })
   ],
+  resolveLoader: {
+    fallback: [
+      path.resolve(__dirname, 'loaders'),
+      path.join(process.cwd(), 'node_modules')
+    ]
+  },
   resolve: {
     extensions: ['', '.js', '.json'],
   }
