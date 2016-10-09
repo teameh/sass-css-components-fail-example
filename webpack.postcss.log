@@ -1,0 +1,72 @@
+$ git co postcss
+
+$ npm start
+
+> @ start /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+> webpack-dev-server
+
+[22:51:47] [write-file-webpack-plugin] options { exitOnErrors: true, log: true, test: null, useHashIndex: true }
+ http://localhost:8080/webpack-dev-server/
+webpack result is served from /static/
+content is served from /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+[22:51:47] [write-file-webpack-plugin] compiler.outputFileSystem is "MemoryFileSystem".
+[22:51:47] [write-file-webpack-plugin] compiler.options.devServer.outputPath is "/Users/Tieme/Projects/Repos/sass-css-components-fail-example/static".
+Hash: b6b9916fa431afaac24f
+Version: webpack 1.13.2
+Time: 758ms
+chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 11.3 kB [rendered]
+    [0] ./src/index.js 451 bytes {0} [built]
+    [1] ./src/styles.scss 83 bytes {0} [built]
+    [3] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+    [4] ./~/style-loader/addStyles.js 7.15 kB {0} [built]
+    [5] ./src/special.scss 1.34 kB {0} [built] [failed]
+    [6] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/special.scss 718 bytes {0} [built] [1 error]
+
+ERROR in ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./src/styles.scss
+Module build failed: Unknown word (11:14)
+
+   9 |
+  10 | @mixin mediaquery($name) {
+> 11 |     @media #{map-get($breakpoints, $name)} {
+     |              ^
+  12 |         @content;
+  13 |     }
+
+ @ ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/special.scss 3:10-177 10:28-195
+
+ERROR in ./src/special.scss
+Module build failed: ModuleBuildError: Module build failed: Unknown word (11:14)
+
+   9 |
+  10 | @mixin mediaquery($name) {
+> 11 |     @media #{map-get($breakpoints, $name)} {
+     |              ^
+  12 |         @content;
+  13 |     }
+
+    at DependenciesBlock.onModuleBuildFailed (/Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/webpack-core/lib/NormalModuleMixin.js:315:19)
+    at nextLoader (/Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/webpack-core/lib/NormalModuleMixin.js:270:31)
+    at /Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/webpack-core/lib/NormalModuleMixin.js:292:15
+    at context.callback (/Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/webpack-core/lib/NormalModuleMixin.js:148:14)
+    at /Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/postcss-loader/index.js:102:17
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 2.22 kB [rendered]
+        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/special.scss 718 bytes {0} [built] [1 error]
+        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+
+    ERROR in ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./src/styles.scss
+    Module build failed: Unknown word (11:14)
+
+       9 |
+      10 | @mixin mediaquery($name) {
+    > 11 |     @media #{map-get($breakpoints, $name)} {
+         |              ^
+      12 |         @content;
+      13 |     }
+
+     @ ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/special.scss 3:10-177 10:28-195
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.84 kB [rendered]
+        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/styles.scss 334 bytes {0} [built]
+        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+webpack: bundle is now VALID.

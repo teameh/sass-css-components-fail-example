@@ -1,0 +1,40 @@
+$ git co master
+
+$ npm start
+
+> @ start /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+> webpack-dev-server
+
+[22:51:30] [write-file-webpack-plugin] options { exitOnErrors: true, log: true, test: null, useHashIndex: true }
+ http://localhost:8080/webpack-dev-server/
+webpack result is served from /static/
+content is served from /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+[22:51:31] [write-file-webpack-plugin] compiler.outputFileSystem is "MemoryFileSystem".
+[22:51:31] [write-file-webpack-plugin] compiler.options.devServer.outputPath is "/Users/Tieme/Projects/Repos/sass-css-components-fail-example/static".
+[22:51:31] [write-file-webpack-plugin] stats.compilation.errors.length is "0".
+[22:51:31] [write-file-webpack-plugin] asset: ./app.js; destination: ./static/app.js [written] (2.26 KB)
+[22:51:31] [write-file-webpack-plugin] asset: ./app.css; destination: ./static/app.css [written] (247 B)
+[22:51:31] [write-file-webpack-plugin] asset: ./app.js.map; destination: ./static/app.js.map [written] (2.35 KB)
+[22:51:31] [write-file-webpack-plugin] asset: ./app.css.map; destination: ./static/app.css.map [written] (84 B)
+Hash: 641f7169b83c763e5767
+Version: webpack 1.13.2
+Time: 692ms
+      Asset       Size  Chunks             Chunk Names
+     app.js    2.31 kB       0  [emitted]  app
+    app.css  247 bytes       0  [emitted]  app
+ app.js.map     2.4 kB       0  [emitted]  app
+app.css.map   84 bytes       0  [emitted]  app
+chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 631 bytes [rendered]
+    [0] ./src/index.js 451 bytes {0} [built]
+    [1] ./src/styles.scss 83 bytes {0} [built]
+    [5] ./src/special.scss 97 bytes {0} [built]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.84 kB [rendered]
+        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/sass-loader!./src/styles.scss 334 bytes {0} [built]
+        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 2.51 kB [rendered]
+        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/sass-loader!./src/special.scss 666 bytes {0} [built]
+        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+        [2] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/sass-loader!./src/styles.scss 334 bytes {0} [built]
+webpack: bundle is now VALID.

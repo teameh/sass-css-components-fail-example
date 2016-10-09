@@ -1,0 +1,82 @@
+$ git co no-css-modules
+
+$ npm start
+
+> @ start /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+> webpack-dev-server
+
+[22:52:29] [write-file-webpack-plugin] options { exitOnErrors: true, log: true, test: null, useHashIndex: true }
+ http://localhost:8080/webpack-dev-server/
+webpack result is served from /static/
+content is served from /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/styles.scss:
+.text {
+  padding: 10px;
+  width: 60px; }
+  @media (max-width: 767px) {
+    .text {
+      background: red; } }
+
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/special.scss:
+.text {
+  background: black;
+  color: white;
+  transform: rotate(180deg); }
+
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/special.scss:
+.text {
+  background: black;
+  color: white;
+  transform: rotate(180deg); }
+
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/styles.scss:
+.text {
+  padding: 10px;
+  width: 60px; }
+  @media (max-width: 767px) {
+    .text {
+      background: red; } }
+
+[22:52:30] [write-file-webpack-plugin] compiler.outputFileSystem is "MemoryFileSystem".
+[22:52:30] [write-file-webpack-plugin] compiler.options.devServer.outputPath is "/Users/Tieme/Projects/Repos/sass-css-components-fail-example/static".
+[22:52:30] [write-file-webpack-plugin] stats.compilation.errors.length is "0".
+[22:52:30] [write-file-webpack-plugin] asset: ./app.js; destination: ./static/app.js [written] (2.25 KB)
+[22:52:30] [write-file-webpack-plugin] asset: ./app.css; destination: ./static/app.css [written] (247 B)
+[22:52:30] [write-file-webpack-plugin] asset: ./app.js.map; destination: ./static/app.js.map [written] (2.33 KB)
+[22:52:30] [write-file-webpack-plugin] asset: ./app.css.map; destination: ./static/app.css.map [written] (84 B)
+Hash: 52113712ff0eeb053f91
+Version: webpack 1.13.2
+Time: 700ms
+      Asset       Size  Chunks             Chunk Names
+     app.js     2.3 kB       0  [emitted]  app
+    app.css  247 bytes       0  [emitted]  app
+ app.js.map    2.39 kB       0  [emitted]  app
+app.css.map   84 bytes       0  [emitted]  app
+chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 618 bytes [rendered]
+    [0] ./src/index.js 451 bytes {0} [built]
+    [1] ./src/styles.scss 83 bytes {0} [built]
+    [5] ./src/special.scss 84 bytes {0} [built]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.8 kB [rendered]
+        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./loaders/log-source-loader.js!./~/sass-loader!./src/special.scss 291 bytes {0} [not cacheable] [built]
+        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.84 kB [rendered]
+        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./loaders/log-source-loader.js!./~/sass-loader!./src/styles.scss 334 bytes {0} [not cacheable] [built]
+        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+[22:52:30] [write-file-webpack-plugin] stats.compilation.errors.length is "0".
+[22:52:30] [write-file-webpack-plugin] asset: ./app.js; destination: ./static/app.js [skipped; matched hash index]
+[22:52:30] [write-file-webpack-plugin] asset: ./app.css; destination: ./static/app.css [skipped; matched hash index]
+[22:52:30] [write-file-webpack-plugin] asset: ./app.js.map; destination: ./static/app.js.map [skipped; matched hash index]
+[22:52:30] [write-file-webpack-plugin] asset: ./app.css.map; destination: ./static/app.css.map [skipped; matched hash index]
+Hash: 52113712ff0eeb053f91
+Version: webpack 1.13.2
+Time: 4ms
+      Asset       Size  Chunks             Chunk Names
+    app.css  247 bytes       0  [emitted]  app
+app.css.map   84 bytes       0  [emitted]  app
+chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 618 bytes
+     + 3 hidden modules
+webpack: bundle is now VALID.

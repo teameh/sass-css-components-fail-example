@@ -1,0 +1,156 @@
+$ git co log-source
+
+$ npm start
+
+> @ start /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+> webpack-dev-server
+
+[22:52:08] [write-file-webpack-plugin] options { exitOnErrors: true, log: true, test: null, useHashIndex: true }
+ http://localhost:8080/webpack-dev-server/
+webpack result is served from /static/
+content is served from /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/styles.scss:
+.text {
+  padding: 10px;
+  width: 60px; }
+  @media (max-width: 767px) {
+    .text {
+      background: red; } }
+
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/special.scss:
+.text {
+  composes: text from './styles.scss';
+  background: black;
+  color: white;
+  transform: rotate(180deg); }
+
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/styles.scss:
+$size: 48px;
+
+$breakpoints: (
+    'mobile'           : ( max-width:   413px ),
+    'phablet'          : ( max-width:   767px ),
+    'tablet-portrait'  : ( max-width:  1023px ),
+    'tablet-landscape' : ( max-width:  1279px )
+);
+
+@mixin mediaquery($name) {
+    @media #{map-get($breakpoints, $name)} {
+        @content;
+    }
+}
+
+.text {
+  padding: 10px;
+  width: 60px;
+
+  @include mediaquery('phablet') {
+      background: red;
+  }
+}
+
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/special.scss:
+.text {
+  composes: text from './styles.scss';
+  background: black;
+  color: white;
+  transform: rotate(180deg); }
+
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/styles.scss:
+$size: 48px;
+
+$breakpoints: (
+    'mobile'           : ( max-width:   413px ),
+    'phablet'          : ( max-width:   767px ),
+    'tablet-portrait'  : ( max-width:  1023px ),
+    'tablet-landscape' : ( max-width:  1279px )
+);
+
+@mixin mediaquery($name) {
+    @media #{map-get($breakpoints, $name)} {
+        @content;
+    }
+}
+
+.text {
+  padding: 10px;
+  width: 60px;
+
+  @include mediaquery('phablet') {
+      background: red;
+  }
+}
+
+source for /Users/Tieme/Projects/Repos/sass-css-components-fail-example/src/styles.scss:
+.text {
+  padding: 10px;
+  width: 60px; }
+  @media (max-width: 767px) {
+    .text {
+      background: red; } }
+
+[22:52:09] [write-file-webpack-plugin] compiler.outputFileSystem is "MemoryFileSystem".
+[22:52:09] [write-file-webpack-plugin] compiler.options.devServer.outputPath is "/Users/Tieme/Projects/Repos/sass-css-components-fail-example/static".
+Hash: d2954e7dc73869a27388
+Version: webpack 1.13.2
+Time: 765ms
+chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 11.2 kB [rendered]
+    [0] ./src/index.js 451 bytes {0} [built]
+    [1] ./src/styles.scss 83 bytes {0} [built]
+    [3] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+    [4] ./~/style-loader/addStyles.js 7.15 kB {0} [built]
+    [5] ./src/special.scss 1.32 kB {0} [built] [failed]
+    [6] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./loaders/log-source-loader.js!./~/sass-loader!./src/special.scss 656 bytes {0} [not cacheable] [built] [1 error]
+
+ERROR in ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./loaders/log-source-loader.js!./src/styles.scss
+Module build failed: Unknown word (11:14)
+
+   9 |
+  10 | @mixin mediaquery($name) {
+> 11 |     @media #{map-get($breakpoints, $name)} {
+     |              ^
+  12 |         @content;
+  13 |     }
+  14 | }
+
+ @ ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./loaders/log-source-loader.js!./~/sass-loader!./src/special.scss 3:10-169 10:28-187
+
+ERROR in ./src/special.scss
+Module build failed: ModuleBuildError: Module build failed: Unknown word (11:14)
+
+   9 |
+  10 | @mixin mediaquery($name) {
+> 11 |     @media #{map-get($breakpoints, $name)} {
+     |              ^
+  12 |         @content;
+  13 |     }
+  14 | }
+
+    at DependenciesBlock.onModuleBuildFailed (/Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/webpack-core/lib/NormalModuleMixin.js:315:19)
+    at nextLoader (/Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/webpack-core/lib/NormalModuleMixin.js:270:31)
+    at /Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/webpack-core/lib/NormalModuleMixin.js:292:15
+    at context.callback (/Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/webpack-core/lib/NormalModuleMixin.js:148:14)
+    at Object.<anonymous> (/Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/css-loader/lib/loader.js:32:18)
+    at /Users/Tieme/Projects/Repos/sass-css-components-fail-example/node_modules/css-loader/lib/processCss.js:221:4
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 2.16 kB [rendered]
+        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./loaders/log-source-loader.js!./~/sass-loader!./src/special.scss 656 bytes {0} [not cacheable] [built] [1 error]
+        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+
+    ERROR in ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./loaders/log-source-loader.js!./src/styles.scss
+    Module build failed: Unknown word (11:14)
+
+       9 |
+      10 | @mixin mediaquery($name) {
+    > 11 |     @media #{map-get($breakpoints, $name)} {
+         |              ^
+      12 |         @content;
+      13 |     }
+      14 | }
+
+     @ ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./loaders/log-source-loader.js!./~/sass-loader!./src/special.scss 3:10-169 10:28-187
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.84 kB [rendered]
+        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./loaders/log-source-loader.js!./~/sass-loader!./src/styles.scss 334 bytes {0} [not cacheable] [built]
+        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
+webpack: bundle is now VALID.

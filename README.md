@@ -9,9 +9,14 @@ npm start // runs fine
 git checkout postcss
 npm start // fails
 
-git checkout postcss-without-css-modules
+git checkout log-source
+npm start // fails
+
+git checkout no-css-modules
 npm start // runs fine
 ```
+
+It seems as if the sass loader does not handle css-modules well.
 
 ## Master
 
@@ -22,39 +27,40 @@ $ git co master
 
 $ npm start
 
-> @ start /Users/UserName/Projects/sass-css-components-fail-example
+
+> @ start /Users/Tieme/Projects/Repos/sass-css-components-fail-example
 > webpack-dev-server
 
-[21:48:33] [write-file-webpack-plugin] options { exitOnErrors: true, log: true, test: null, useHashIndex: true }
+[22:51:30] [write-file-webpack-plugin] options { exitOnErrors: true, log: true, test: null, useHashIndex: true }
  http://localhost:8080/webpack-dev-server/
 webpack result is served from /static/
-content is served from /Users/UserName/Projects/sass-css-components-fail-example
-[21:48:34] [write-file-webpack-plugin] compiler.outputFileSystem is "MemoryFileSystem".
-[21:48:34] [write-file-webpack-plugin] compiler.options.devServer.outputPath is "/Users/UserName/Projects/sass-css-components-fail-example/static".
-[21:48:34] [write-file-webpack-plugin] stats.compilation.errors.length is "0".
-[21:48:34] [write-file-webpack-plugin] asset: ./app.js; destination: ./static/app.js [written] (2.25 KB)
-[21:48:34] [write-file-webpack-plugin] asset: ./app.css; destination: ./static/app.css [written] (246 B)
-[21:48:34] [write-file-webpack-plugin] asset: ./app.js.map; destination: ./static/app.js.map [written] (2.35 KB)
-[21:48:34] [write-file-webpack-plugin] asset: ./app.css.map; destination: ./static/app.css.map [written] (84 B)
-Hash: 13a3f289495c92f5d5d9
+content is served from /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+[22:51:31] [write-file-webpack-plugin] compiler.outputFileSystem is "MemoryFileSystem".
+[22:51:31] [write-file-webpack-plugin] compiler.options.devServer.outputPath is "/Users/Tieme/Projects/Repos/sass-css-components-fail-example/static".
+[22:51:31] [write-file-webpack-plugin] stats.compilation.errors.length is "0".
+[22:51:31] [write-file-webpack-plugin] asset: ./app.js; destination: ./static/app.js [written] (2.26 KB)
+[22:51:31] [write-file-webpack-plugin] asset: ./app.css; destination: ./static/app.css [written] (247 B)
+[22:51:31] [write-file-webpack-plugin] asset: ./app.js.map; destination: ./static/app.js.map [written] (2.35 KB)
+[22:51:31] [write-file-webpack-plugin] asset: ./app.css.map; destination: ./static/app.css.map [written] (84 B)
+Hash: 641f7169b83c763e5767
 Version: webpack 1.13.2
-Time: 720ms
+Time: 692ms
       Asset       Size  Chunks             Chunk Names
      app.js    2.31 kB       0  [emitted]  app
-    app.css  246 bytes       0  [emitted]  app
- app.js.map    2.41 kB       0  [emitted]  app
+    app.css  247 bytes       0  [emitted]  app
+ app.js.map     2.4 kB       0  [emitted]  app
 app.css.map   84 bytes       0  [emitted]  app
-chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 625 bytes [rendered]
-    [0] ./src/index.js 446 bytes {0} [built]
+chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 631 bytes [rendered]
+    [0] ./src/index.js 451 bytes {0} [built]
     [1] ./src/styles.scss 83 bytes {0} [built]
-    [5] ./src/custom.scss 96 bytes {0} [built]
+    [5] ./src/special.scss 97 bytes {0} [built]
 Child extract-text-webpack-plugin:
     chunk    {0} extract-text-webpack-plugin-output-filename 1.84 kB [rendered]
         [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/sass-loader!./src/styles.scss 334 bytes {0} [built]
         [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
 Child extract-text-webpack-plugin:
-    chunk    {0} extract-text-webpack-plugin-output-filename 2.5 kB [rendered]
-        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/sass-loader!./src/custom.scss 664 bytes {0} [built]
+    chunk    {0} extract-text-webpack-plugin-output-filename 2.51 kB [rendered]
+        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/sass-loader!./src/special.scss 666 bytes {0} [built]
         [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
         [2] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/sass-loader!./src/styles.scss 334 bytes {0} [built]
 webpack: bundle is now VALID.
@@ -63,6 +69,8 @@ webpack: bundle is now VALID.
 Open [http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) in your browser, result should look like this:
 
 ![Result](http://i.imgur.com/PQwBbkD.png)
+
+Fails.. see [webpack.master.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.master.log) for full file.
 
 ## PostCSS
 
@@ -73,28 +81,28 @@ $ git co postcss
 
 $ npm start
 
-> @ start /Users/UserName/Projects/sass-css-components-fail-example
+
+> @ start /Users/Tieme/Projects/Repos/sass-css-components-fail-example
 > webpack-dev-server
 
-[21:50:34] [write-file-webpack-plugin] options { exitOnErrors: true, log: true, test: null, useHashIndex: true }
+[22:51:47] [write-file-webpack-plugin] options { exitOnErrors: true, log: true, test: null, useHashIndex: true }
  http://localhost:8080/webpack-dev-server/
 webpack result is served from /static/
-content is served from /Users/UserName/Projects/sass-css-components-fail-example
-[21:50:35] [write-file-webpack-plugin] compiler.outputFileSystem is "MemoryFileSystem".
-[21:50:35] [write-file-webpack-plugin] compiler.options.devServer.outputPath is "/Users/UserName/Projects/sass-css-components-fail-example/static".
-Hash: 8e6f0e789e8ecde127af
+content is served from /Users/Tieme/Projects/Repos/sass-css-components-fail-example
+[22:51:47] [write-file-webpack-plugin] compiler.outputFileSystem is "MemoryFileSystem".
+[22:51:47] [write-file-webpack-plugin] compiler.options.devServer.outputPath is "/Users/Tieme/Projects/Repos/sass-css-components-fail-example/static".
+Hash: b6b9916fa431afaac24f
 Version: webpack 1.13.2
-Time: 797ms
-chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 11.7 kB [rendered]
-    [0] ./src/index.js 446 bytes {0} [built]
+Time: 758ms
+chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 11.3 kB [rendered]
+    [0] ./src/index.js 451 bytes {0} [built]
     [1] ./src/styles.scss 83 bytes {0} [built]
     [3] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
     [4] ./~/style-loader/addStyles.js 7.15 kB {0} [built]
-    [5] ./src/custom.scss 1.34 kB {0} [built] [failed]
-    [6] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/custom.scss 716 bytes {0} [built]
-    [7] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./src/styles.scss 504 bytes {0} [built] [1 error]
+    [5] ./src/special.scss 1.34 kB {0} [built] [failed]
+    [6] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/special.scss 718 bytes {0} [built] [1 error]
 
-ERROR in ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./src/utils.scss
+ERROR in ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./src/styles.scss
 Module build failed: Unknown word (11:14)
 
    9 |
@@ -104,55 +112,35 @@ Module build failed: Unknown word (11:14)
   12 |         @content;
   13 |     }
 
- @ ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./src/styles.scss 3:10-176
+ @ ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/special.scss 3:10-177 10:28-195
 
 ...
 
  ```
- ## PostCSS Without css submodules
+Fails.. see [webpack.postcss.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.postcss.log) for full file.
 
- Uses SASS + PostCSS
+ ## Log source example
+
+ Uses CSS modules + SASS + Custom source logging module
+
+ custom loader is loaded in between css-loader and sass-loader to see what the output of the sass loader is.
 
 ```sh
-$ git co postcss-without-css-modules
+$ git co log-source
 
 $ npm start
-
-> @ start /Users/UserName/Projects/sass-css-components-fail-example
-> webpack-dev-server
-
-[21:54:20] [write-file-webpack-plugin] options { exitOnErrors: true, log: true, test: null, useHashIndex: true }
- http://localhost:8080/webpack-dev-server/
-webpack result is served from /static/
-content is served from /Users/UserName/Projects/sass-css-components-fail-example
-[21:54:21] [write-file-webpack-plugin] compiler.outputFileSystem is "MemoryFileSystem".
-[21:54:21] [write-file-webpack-plugin] compiler.options.devServer.outputPath is "/Users/UserName/Projects/sass-css-components-fail-example/static".
-[21:54:21] [write-file-webpack-plugin] stats.compilation.errors.length is "0".
-[21:54:21] [write-file-webpack-plugin] asset: ./app.js; destination: ./static/app.js [written] (2.24 KB)
-[21:54:21] [write-file-webpack-plugin] asset: ./app.css; destination: ./static/app.css [written] (473 B)
-[21:54:21] [write-file-webpack-plugin] asset: ./app.js.map; destination: ./static/app.js.map [written] (2.34 KB)
-[21:54:21] [write-file-webpack-plugin] asset: ./app.css.map; destination: ./static/app.css.map [written] (84 B)
-Hash: b133af2cdc38b7b8e989
-Version: webpack 1.13.2
-Time: 754ms
-      Asset       Size  Chunks             Chunk Names
-     app.js     2.3 kB       0  [emitted]  app
-    app.css  473 bytes       0  [emitted]  app
- app.js.map     2.4 kB       0  [emitted]  app
-app.css.map   84 bytes       0  [emitted]  app
-chunk    {0} app.js, app.css, app.js.map, app.css.map (app) 612 bytes [rendered]
-    [0] ./src/index.js 446 bytes {0} [built]
-    [1] ./src/styles.scss 83 bytes {0} [built]
-    [5] ./src/custom.scss 83 bytes {0} [built]
-Child extract-text-webpack-plugin:
-    chunk    {0} extract-text-webpack-plugin-output-filename 1.84 kB [rendered]
-        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/styles.scss 334 bytes {0} [built]
-        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
-Child extract-text-webpack-plugin:
-    chunk    {0} extract-text-webpack-plugin-output-filename 2.03 kB [rendered]
-        [0] ./~/css-loader?modules&importLoaders=1&localIdentName=[path]_[name]_[local]!./~/postcss-loader!./~/sass-loader!./src/custom.scss 524 bytes {0} [built]
-        [1] ./~/css-loader/lib/css-base.js 1.51 kB {0} [built]
-webpack: bundle is now VALID.
 ```
+
+Fails.. see [webpack.log-source.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.log-source.log) for full file.
+
+File is showing full sass, not css...
+
+## No Css Modules example
+
+ Uses SASS + Custom source logging module
+
+ Same as above but without css modules. This runs fine. See [webpack.no-css-modules.log](https://github.com/tiemevanveen/sass-css-components-fail-example/blob/master/webpack.no-css-modules.log) for full file.
+
+File is showing full sass, not css...
 
 
