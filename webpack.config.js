@@ -30,7 +30,8 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style-loader', [
           'css?modules&importLoaders=1&localIdentName=[path]_[name]_[local]',
-          'postcss-loader',
+          'log-source',
+          // 'postcss-loader',
           'sass'
         ])
       },
