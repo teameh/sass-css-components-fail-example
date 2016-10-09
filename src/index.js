@@ -1,7 +1,7 @@
 import styles from './styles.scss';
-import customStyles from './custom.scss';
+import special from './special.scss';
 
 document.getElementById('app').innerHTML = `
   <p class="${styles.text}">Text</p>
-  <p class="${customStyles.text}">Text</p>
+  <p class="${special.text}">Text</p>
 `;
