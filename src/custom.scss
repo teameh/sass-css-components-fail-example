@@ -1,0 +1,9 @@
+@import './utils.scss';
+
+.text {
+  composes: text from './styles.scss';
+
+  background: black;
+  color: white;
+  transform: rotate(180deg);
+}

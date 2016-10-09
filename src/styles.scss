@@ -1,0 +1,10 @@
+@import './utils.scss';
+
+.text {
+  padding: 10px;
+  width: 60px;
+
+  @include mediaquery('phablet') {
+      background: red;
+  }
+}
