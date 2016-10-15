@@ -1,3 +1,30 @@
+## Fixed!
+
+Yeah, StackOverflow user [@Pascal Duez](http://stackoverflow.com/users/3852008/pascal-duez) knew the answer to the problem!
+
+The fix was pretty easy...
+
+```diff
+# webpack.config.js
+@@ -29,7 +29,7 @@
+       {
+         test: /\.scss$/,
+         loader: ExtractTextPlugin.extract('style-loader', [
+-          'css?modules&importLoaders=1&localIdentName=[path]_[name]_[local]',
++          'css?modules&importLoaders=2&localIdentName=[path]_[name]_[local]',
+           'postcss-loader',
+           'sass'
+         ])
+       }
+```
+
+`importLoaders` should have been `2` instead of `1` because of the extra `postcss-loader`. Makes sense.
+See http://stackoverflow.com/a/40056496/672989 for the original answer.
+
+Checkout the `postcss-fixed` branch for the final working example.
+
+## Original problem:
+
 This repo demonstrates the failure while combining CSS Modules + SASS + PostCSS
 
 ```sh
