@@ -29,7 +29,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style-loader', [
-          'css?modules&importLoaders=1&localIdentName=[path]_[name]_[local]',
+          'css?modules&importLoaders=2&localIdentName=[path]_[name]_[local]',
           'postcss-loader',
           'sass'
         ])
